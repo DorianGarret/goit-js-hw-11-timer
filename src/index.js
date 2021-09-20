@@ -2,12 +2,12 @@ import './sass/main.scss';
 
 const timer = {
     start() {
-        const startTime = Date.now();
+        const startTime = new Date('Dec 31, 2021,23:59:00');
 
         startTime -
             setInterval(() => {
                 const currentTime = Date.now();
-                const deltaTime = currentTime - startTime;
+                const deltaTime = startTime - currentTime;
                 const time = getTimeComponents(deltaTime);
                 clockInterface(time);
             }, 1000);
