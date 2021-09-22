@@ -2,17 +2,13 @@ export class CountdownTimer {
     constructor({ selector, targetDate }) {
         this.targetDate = targetDate;
         this.selector = selector;
-        this.deltaTime;
-        this.time;
-        this.start();
     }
 
     start() {
         setInterval(() => {
-            const currentTime = Date.now();
-            this.deltaTime = this.targetDate - currentTime;
-            this.time = this.getTimeComponents(this.deltaTime);
-            this.clockInterface(this.time);
+            this.clockInterface(
+                this.getTimeComponents(this.targetDate - Date.now()),
+            );
         }, 1000);
     }
 
